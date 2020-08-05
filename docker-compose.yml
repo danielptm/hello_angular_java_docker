@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+  fe:
+    build:
+      context: .
+      dockerfile: ./HelloStandardFE/Dockerfile
+      network: host
+    image: fe
+    depends_on:
+      - be
+    ports:
+      - "8080:8080"
+    links:
+      - be
+  be:
+    build:
+      context: .
+      dockerfile: ./HelloStandardBE/Dockerfile
+      network: host
+    image: be
+    ports:
+      - "5000:5000"
