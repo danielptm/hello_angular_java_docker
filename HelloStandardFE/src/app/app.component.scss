@@ -12,7 +12,23 @@
   width: 25%;
   background-color: white;
   box-shadow: 1px 1px 1px lightgray;
+  text-align: center;
+  align-content: center;
   & button {
     margin: 10px;
+  }
+}
+
+.button {
+  background-color: lightblue;
+  border: 1px solid lightgray;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
   }
 }
