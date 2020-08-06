@@ -49,9 +49,13 @@ We can use this pattern to run locally without approximating the kubernetes reso
 
 Ensure that you can build the application using docker-compose as outlined above.  From there, there is some additional setup to spin up and deploy a local kubernetes cluster running the application.
 
+### Instal kubectl
+
+Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) following the instructions provided.  If you can run `kubectl version`, you're in good shape.
+
 ### Install Minikube
 
-(Minikube)[https://github.com/kubernetes/minikube] is a single-node kubernetes cluster that is useful in local development.  Using the [instructions here](https://kubernetes.io/docs/tasks/tools/install-minikube/), install `minikube` in the method for your OS.  I am developing on Windows, so for me, I used the (Chocolatey)[https://chocolatey.org/] package manager, as recommended in the minikube documentation.  If you can run `minikube version`, you've installed it successfully.
+[Minikube](https://github.com/kubernetes/minikube) is a single-node kubernetes cluster that is useful in local development.  Using the [instructions here](https://kubernetes.io/docs/tasks/tools/install-minikube/), install `minikube` in the method for your OS.  I am developing on Windows, so for me, I used the [Chocolatey](https://chocolatey.org/) package manager, as recommended in the minikube documentation.  If you can run `minikube version`, you've installed it successfully.
 
 ### Start Minikube
 
