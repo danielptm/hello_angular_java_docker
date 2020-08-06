@@ -5,7 +5,7 @@ Set-Variable -name VERSION -Value 0.0.2;
 Set-Variable -name CURDIR -Value $(Get-Location);
 
 # build docker stuff
-& minikube docker-env | Invoke-Expression;
+& minikube -p minikube docker-env | Invoke-Expression;
 Set-Location $CURDIR\HelloStandardBE;
 mvn clean install;
 docker build . -t hello-standard-be:$VERSION;
