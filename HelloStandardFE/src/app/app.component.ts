@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent implements OnInit{
   }
 
   click() {
-    this.http.get('http://localhost:5000/text', {responseType: 'text'})
+    console.log(environment)
+    this.http.get('http://' + environment.apiBaseUrl + 'text', {responseType: 'text'})
       .toPromise()
       .then((res) => {
           this.text = res;
