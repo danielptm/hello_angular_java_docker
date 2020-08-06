@@ -33,5 +33,6 @@ services:
     restart: always
     ports:
       - "27017:27017"
-  mysql:
-    image: mysql
+  # This is for simulating the oracle database ... We will have to change out the JPA database type as an environment variable oracle/mysql    
+  # mysql:
+  #   image: mysql
