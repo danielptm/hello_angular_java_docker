@@ -20,3 +20,16 @@ services:
     image: be
     ports:
       - "5000:5000"
+  be2:
+    build:
+      context: .
+      dockerfile: ./HelloStandardBE/Dockerfile
+      network: host
+    image: be2
+    ports:
+      - "5001:5001"
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"

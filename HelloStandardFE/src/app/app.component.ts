@@ -8,6 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
   text = '';
+  text2 = '';
 
   constructor(private http: HttpClient) {}
 
@@ -22,5 +23,12 @@ export class AppComponent implements OnInit{
       .then((res) => {
           this.text = res;
       }, e => { this.text = 'Oops, service must not be working.'; });
+  }
+  click2() {
+    this.http.get('http://localhost:5001/text', {responseType: 'text'})
+      .toPromise()
+      .then((res) => {
+        this.text2 = res;
+      }, e => { this.text2 = 'Oops, service must not be working.'; });
   }
 }
