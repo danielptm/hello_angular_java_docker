@@ -20,7 +20,7 @@ kubectl apply -f $CURDIR\ops\k8s\local\nginx-deploy.yaml
 kubectl apply -f $CURDIR\ops\k8s\local\nginx-service.yaml
 
 
-Start-Sleep -s 1  # give the service time to spin up in k8s
+Start-Sleep -s 3  # give the service time to spin up in k8s
 Invoke-Expression 'cmd /c start PowerShell -NoExit -Command { kubectl port-forward svc/nginx 7070:7070 }'  # open a new window to do persistent port-forwarding
 
 # Cleanup
