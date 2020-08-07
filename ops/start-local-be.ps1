@@ -24,9 +24,7 @@ kubectl apply -f $CURDIR\ops\k8s\local\nginx-configmap.yaml
 kubectl apply -f $CURDIR\ops\k8s\local\nginx-deploy.yaml
 kubectl apply -f $CURDIR\ops\k8s\local\nginx-service.yaml
 
-While($(kubectl get deploy nginx -o json | jq .status.availableReplicas) -lt 1) {
-    Start-Sleep -Milliseconds 100;
-}
+Start-Sleep -s 10
 Invoke-Expression 'cmd /c start PowerShell -NoExit -Command { kubectl port-forward svc/nginx 7070:7070 }'  # open a new window to do persistent port-forwarding
 
 # Cleanup

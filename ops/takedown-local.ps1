@@ -11,7 +11,7 @@ Set-Variable -name CONTAINER_ID -Value $(docker ps -aqf "name=hello-standard-fe"
 
 # Clean up minikube
 ForEach ($file in $(Get-ChildItem $CURDIR\ops\k8s\local\.)) {
-    kubectl delete -f $file
+    kubectl delete -f $CURDIR\ops\k8s\local\$file
 }
 
 # End frontend

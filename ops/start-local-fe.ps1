@@ -16,6 +16,8 @@ docker build . -t hello-standard-fe:$VERSION;
 docker run -d -p 8080:8080 --name hello-standard-fe -t hello-standard-fe:$VERSION;
 
 # Cleanup
+Remove-Item -Path Env:LOCAL_ENV;
+Remove-Item -Path Env:API_GATEWAY_PORT;
 Set-PSDebug -trace 0;
 $ErrorActionPreference='';
 Set-Location $CURDIR;

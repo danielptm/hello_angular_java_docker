@@ -22,9 +22,7 @@ kubectl apply -f $CURDIR/ops/k8s/local/nginx-configmap.yaml
 kubectl apply -f $CURDIR/ops/k8s/local/nginx-deploy.yaml
 kubectl apply -f $CURDIR/ops/k8s/local/nginx-service.yaml
 
-while [ $(kubectl get deploy nginx -o json | jq .status.availableReplicas) -lt 1 ]
-do
-    sleep 1
-done
+sleep 10
+/bin/bash -e kubectl port-forward svc/nginx 7070:7070
 
 cd $CURDIR
