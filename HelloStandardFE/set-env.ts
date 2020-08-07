@@ -1,14 +1,18 @@
 const writeFile = require('fs').writeFile;
 const targetPath = './src/environments/environment.ts';
 
-let hostname = process.env.MINIKUBE_IP !== undefined ? process.env.MINIKUBE_IP : 'localhost';
-let port = process.env.PORT !== undefined ? process.env.PORT : 80;
-let prod = process.env.PROD_ENV !== undefined ? true : false;
+let hostname = process.env.API_BASE_URL !== undefined ? process.env.API_BASE_URL : 'localhost';  // non-local dev future proof? idk
+let api_gateway_port = process.env.API_GATEWAY_PORT !== undefined ? process.env.API_GATEWAY_PORT : 7070;
+let local = process.env.LOCAL_ENV !== undefined ? true : false;
+let production = process.env.PRODUCTION_ENV !== undefined ? true : false;
+
 
 // `environment.ts` file structure
 const envConfigFile = `export const environment = {
-   apiBaseUrl: '${hostname}:${port}/',
-   production: '${prod}'
+   apiBaseUrl: '${hostname}',
+   api_gateway_port: '${api_gateway_port}',
+   local: '${local}',
+   production: '${production}'
 };
 `;
 

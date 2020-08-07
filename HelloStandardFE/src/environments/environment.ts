@@ -1,4 +1,6 @@
 export const environment = {
-   apiBaseUrl: '172.25.139.140:80/',
+   apiBaseUrl: 'localhost',
+   api_gateway_port: '7070',
+   local: 'true',
    production: 'false'
 };

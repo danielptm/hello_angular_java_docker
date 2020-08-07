@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { env } from 'process';
 
 @Component({
   selector: 'app-root',
@@ -19,15 +20,17 @@ export class AppComponent implements OnInit{
   }
 
   click() {
-    console.log(environment)
-    this.http.get('http://' + environment.apiBaseUrl + 'text', {responseType: 'text'})
+    // svc 1 endpoint
+    let svc_1_endpoint = environment.local ? 'http://' + environment.apiBaseUrl + ":" + environment.api_gateway_port + '/text' : 'http://localhost:5000/text' ;
+    this.http.get(svc_1_endpoint, {responseType: 'text'})
       .toPromise()
       .then((res) => {
           this.text = res;
       }, e => { this.text = 'Oops, service must not be working.'; });
   }
   click2() {
-    this.http.get('http://localhost:5001/text', {responseType: 'text'})
+    let svc_2_endpoint = environment.local ? 'http://' + environment.apiBaseUrl + ":" + environment.api_gateway_port + '/text2' : 'http://localhost:5001/text' ;
+    this.http.get(svc_2_endpoint, {responseType: 'text'})
       .toPromise()
       .then((res) => {
         this.text2 = res;
