@@ -68,6 +68,13 @@ Minikube can run on several different virtualization platforms.  On a Mac, the p
 
 This will take a while.  If youre machine runs out of resources, try adjusting the resources allocated to minikube using the `--memory` and `--cpu` flags.  If you can run `minikube status` after setup and `docker ps` after setup without error, you're in a good spot.
 
+### Install jq
+
+I use `jq` for parsing json objects that the `kubectl` commands spit out.  Install it on your platform:
+
+- Windows: `choco install jq`
+- Mac: `brew install jq`
+
 ### Spin up the Project
 
 *As an adminstrator* and from the root directory of the project, run the following scripts:

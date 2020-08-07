@@ -13,7 +13,7 @@ npm run build;
 docker build . -t hello-standard-fe:$VERSION;
 
 # Spin up frontend
-docker run -d -p 8080:8080 -t hello-standard-fe:$VERSION;
+docker run -d -p 8080:8080 --name hello-standard-fe -t hello-standard-fe:$VERSION;
 
 # Cleanup
 Set-PSDebug -trace 0;
