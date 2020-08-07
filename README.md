@@ -100,6 +100,7 @@ This script essentially builds and runs a docker image with the front end built 
 
 ## Teardown
 
-// TODO - scriptify
+Close the port-forward terminal window that got opened when spinning up the backend.  Run the teardown script:
 
-Note that you'll have to tear down the front end after you're done testing.  Find it via `docker ps` and kill it via `docker kill`.  You might want to delete the kubectl resources too via `kubect delete -f ./ops/k8s/local/*`.  Up to you.
+- Windows: `./ops/takedown-local.ps1`
+- Mac: `./ops/takedown-local.sh`
