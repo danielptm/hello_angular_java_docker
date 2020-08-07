@@ -63,7 +63,7 @@ Minikube can run on several different virtualization platforms.  On a Mac, the p
 
 *As an administrator*, run minikube:
 
-- Windows: `> minikube start --vm-driver=docker --extra-config apiserver.cors-allowed-origins=.*`
+- Windows: `> minikube start --vm-driver=docker`
 - Mac: `> minikube start --vm-driver=hyperkit`
 
 This will take a while.  If youre machine runs out of resources, try adjusting the resources allocated to minikube using the `--memory` and `--cpu` flags.  If you can run `minikube status` after setup and `docker ps` after setup without error, you're in a good spot.
