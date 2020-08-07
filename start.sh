@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd HelloStandardFE/;
 npm install;
 ng build --prod;

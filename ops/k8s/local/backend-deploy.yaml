@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  replicas: 2 
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: hello-standard-be
+        image: hello-standard-be:0.0.2
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Never
