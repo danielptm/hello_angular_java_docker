@@ -11,8 +11,8 @@ let production = process.env.PRODUCTION_ENV !== undefined ? true : false;
 const envConfigFile = `export const environment = {
    apiBaseUrl: '${hostname}',
    api_gateway_port: '${api_gateway_port}',
-   local: '${local}',
-   production: '${production}'
+   local: ${local},
+   production: ${production}
 };
 `;
 

@@ -2,7 +2,7 @@
 
 cd HelloStandardFE/;
 npm install;
-ng build --prod;
+npm run build;
 docker build . --tag=fe
 cd ../HelloStandardBE/;
 mvn clean install;
