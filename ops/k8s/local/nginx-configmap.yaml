@@ -33,8 +33,12 @@ data:
         listen       7071;
         server_name  default_server;
 
-        location / {
-          proxy_pass http://backend-service:5000/;
+        location /text {
+          proxy_pass http://backend-service:5000/text;
+        }
+
+        location /text2 {
+          proxy_pass http://backend-service-2:5001/text;
         }
       }
     }
