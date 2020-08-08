@@ -1,14 +1,22 @@
 #!/bin/bash
 
-cd HelloStandardFE/;
+CURDIR=$(pwd)
+
+# Frontend
+cd $CURDIR/HelloStandardFE/;
 npm install;
 npm run build;
 docker build . --tag=fe
-cd ../HelloStandardBE/;
+
+# Backend Service 1
+cd $CURDIR/HelloStandardBE/;
 mvn clean install;
 docker build . --tag=be
-cd ../HelloStandardBE2/;
+
+# Backend Service 2
+cd $CURDIR/HelloStandardBE2/;
 mvn clean install;
-docker build . --tag=be2
-cd ..;
+docker build . --tag=be2;
+
+cd $CURDIR;
 docker-compose up;

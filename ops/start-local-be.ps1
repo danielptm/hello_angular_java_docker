@@ -16,16 +16,15 @@ docker build . -t hello-standard-be-2:$VERSION;
 Remove-Item -Path Env:DOCKER*;  # set docker-engine context back to local machine
 
 # Start Kubernetes Resources
+kubectl apply -f $CURDIR\ops\k8s\local\nginx-configmap.yaml
+kubectl apply -f $CURDIR\ops\k8s\local\nginx-deploy.yaml
+kubectl apply -f $CURDIR\ops\k8s\local\nginx-service.yaml
 kubectl apply -f $CURDIR\ops\k8s\local\backend-deploy.yaml
 kubectl apply -f $CURDIR\ops\k8s\local\backend-service.yaml
 kubectl apply -f $CURDIR\ops\k8s\local\backend-deploy-2.yaml
 kubectl apply -f $CURDIR\ops\k8s\local\backend-service-2.yaml
-kubectl apply -f $CURDIR\ops\k8s\local\nginx-configmap.yaml
-kubectl apply -f $CURDIR\ops\k8s\local\nginx-deploy.yaml
-kubectl apply -f $CURDIR\ops\k8s\local\nginx-service.yaml
 
-Start-Sleep -s 10
-Invoke-Expression 'cmd /c start PowerShell -NoExit -Command { kubectl port-forward svc/nginx 7070:7070 }'  # open a new window to do persistent port-forwarding
+Invoke-Expression 'cmd /c start PowerShell -NoExit -Command { Start-Sleep -s 15; kubectl port-forward svc/nginx 7070:7070 }'  # open a new window to do persistent port-forwarding
 
 # Cleanup
 Set-PSDebug -trace 0;

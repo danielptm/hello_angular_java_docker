@@ -100,7 +100,7 @@ This script essentially builds and runs a docker image with the front end built 
 
 ## Teardown
 
-Close the port-forward terminal window that got opened when spinning up the backend.  Run the teardown script:
+Close the port-forward terminal window that got opened when spinning up the backend either with ctrl+c or just by closing the window entirely.  Run the teardown script:
 
 - Windows: `./ops/takedown-local.ps1`
 - Mac: `./ops/takedown-local.sh`
