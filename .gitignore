@@ -1,5 +1,5 @@
-HelloStandardBE/target
-HelloStandardFE/node_modules
-HelloStandardFE/.idea/
-HelloStandardFE/dist/
+HelloStandardBE/
+HelloStandardFE/
+HelloStandardFE/
+HelloStandardFE/
 */.idea/

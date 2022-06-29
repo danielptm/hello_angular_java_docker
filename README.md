@@ -1,5 +1,12 @@
-## How to run
+## How to start
+1. Clone the hello_angular_java_docker repo
+2. Clone HelloStandardBE, HelloStandardBE2 AND HelloStandardFE into this repo
+3. Get certificates and any resources needed for running these services locally and put them in the secret-files location.
 
+## The purpose of the secret-files folder
+Here you put files or other resources that cannot be in the source code of a repo for a particular project. In each dockerfile for each project you have to have conditional logic that copies these items into their respective docker image locations.
+
+## How to run
 1. Ensure that java11 is installed.
 ```
 java -version
